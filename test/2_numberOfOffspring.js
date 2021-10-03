@@ -10,17 +10,17 @@ describe("Vampire", function() {
     rootVampire = new Vampire("root");
   });
 
-  describe("numberOfOffspring", () => {
+  describe("numberOfprogeny", () => {
 
-    it("should get the correct number of offspring", () => {
-      expect(rootVampire.numberOfOffspring).to.equal(0);
-      rootVampire.addOffspring(new Vampire());
-      expect(rootVampire.numberOfOffspring).to.equal(1);
-      rootVampire.addOffspring(new Vampire());
-      rootVampire.addOffspring(new Vampire());
-      rootVampire.addOffspring(new Vampire());
-      rootVampire.addOffspring(new Vampire());
-      expect(rootVampire.numberOfOffspring).to.equal(5);
+    it("should get the correct number of progeny", () => {
+      expect(rootVampire.numberOfprogeny).to.equal(0);
+      rootVampire.addprogeny(new Vampire());
+      expect(rootVampire.numberOfprogeny).to.equal(1);
+      rootVampire.addprogeny(new Vampire());
+      rootVampire.addprogeny(new Vampire());
+      rootVampire.addprogeny(new Vampire());
+      rootVampire.addprogeny(new Vampire());
+      expect(rootVampire.numberOfprogeny).to.equal(5);
     });
   });
 });

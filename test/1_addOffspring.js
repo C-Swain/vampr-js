@@ -10,24 +10,24 @@ describe("Vampire", function() {
     rootVampire = new Vampire("root");
   });
 
-  describe("addOffspring", () => {
+  describe("addprogeny", () => {
 
-    let offspring1;
-    let offspring2;
+    let progeny1;
+    let progeny2;
     beforeEach(() => {
-      offspring1 = new Vampire("andrew");
-      offspring2 = new Vampire("sarah");
-      rootVampire.addOffspring(offspring1);
-      rootVampire.addOffspring(offspring2);
+      progeny1 = new Vampire("andrew");
+      progeny2 = new Vampire("sarah");
+      rootVampire.addprogeny(progeny1);
+      rootVampire.addprogeny(progeny2);
     });
 
-    it("should get added to offspring", () => {
-      expect(rootVampire.offspring[0]).to.equal(offspring1);
-      expect(rootVampire.offspring[1]).to.equal(offspring2);
+    it("should get added to progeny", () => {
+      expect(rootVampire.progeny[0]).to.equal(progeny1);
+      expect(rootVampire.progeny[1]).to.equal(progeny2);
     });
-    it("should add parent as creator", () => {
-      expect(offspring1.creator).to.equal(rootVampire);
-      expect(offspring2.creator).to.equal(rootVampire);
+    it("should add parent as maker", () => {
+      expect(progeny1.maker).to.equal(rootVampire);
+      expect(progeny2.maker).to.equal(rootVampire);
     });
 
   });

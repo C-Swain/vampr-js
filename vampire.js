@@ -1,30 +1,46 @@
+
+
 class Vampire {
   constructor(name, yearConverted) {
     this.name = name;
     this.yearConverted = yearConverted;
-    this.offspring = [];
-    this.creator = null;
+    this.progeny = [];
+    this.maker = null;
   }
 
   /** Simple tree methods **/
 
-  // Adds the vampire as an offspring of this vampire
-  addOffspring(vampire) {
-
+  // Adds the vampire as an progeny of this vampire
+  addprogeny(progeny) {
+    this.progeny.push(progeny);
+    progeny.maker = this;
   }
 
   // Returns the total number of vampires created by that vampire
-  get numberOfOffspring() {
-
+  get numberOfprogeny() {
+    return this.progeny.length;
   }
 
   // Returns the number of vampires away from the original vampire this vampire is
   get numberOfVampiresFromOriginal() {
-
+    let numberOfVampires = 0;
+    let currentVampire = this;
+    while (currentVampire.maker) {
+      currentVampire = currentVampire.maker
+      numberOfVampires ++;
+    }
+    return numberOfVampires;
   }
 
   // Returns true if this vampire is more senior than the other vampire. (Who is closer to the original vampire)
   isMoreSeniorThan(vampire) {
+
+const vamp1 = this.numberOfVampiresFromOriginal;
+const vamp2 =  vampire.numberOfVampiresFromOriginal;
+if (vamp1 < vamp2) {
+  return true;
+}
+  return false;
 
   }
 

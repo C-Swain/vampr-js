@@ -12,39 +12,39 @@ describe("Vampire", function() {
 
   describe("isMoreSeniorThan", () => {
 
-    let offspring1, offspring2, offspring3, offspring4;
+    let progeny1, progeny2, progeny3, progeny4;
     beforeEach(() => {
-      offspring1 = new Vampire();
-      offspring2 = new Vampire();
-      offspring3 = new Vampire();
-      offspring4 = new Vampire();
+      progeny1 = new Vampire();
+      progeny2 = new Vampire();
+      progeny3 = new Vampire();
+      progeny4 = new Vampire();
 
-      rootVampire.addOffspring(offspring1);
-      rootVampire.addOffspring(offspring2);
-      rootVampire.addOffspring(offspring3);
-      offspring3.addOffspring(offspring4);
+      rootVampire.addprogeny(progeny1);
+      rootVampire.addprogeny(progeny2);
+      rootVampire.addprogeny(progeny3);
+      progeny3.addprogeny(progeny4);
     });
 
     it("should return true when called on root vampire", () => {
-      expect(rootVampire.isMoreSeniorThan(offspring1)).to.equal(true);
-      expect(rootVampire.isMoreSeniorThan(offspring2)).to.equal(true);
-      expect(rootVampire.isMoreSeniorThan(offspring3)).to.equal(true);
-      expect(rootVampire.isMoreSeniorThan(offspring4)).to.equal(true);
+      expect(rootVampire.isMoreSeniorThan(progeny1)).to.equal(true);
+      expect(rootVampire.isMoreSeniorThan(progeny2)).to.equal(true);
+      expect(rootVampire.isMoreSeniorThan(progeny3)).to.equal(true);
+      expect(rootVampire.isMoreSeniorThan(progeny4)).to.equal(true);
     });
 
     it("should return false when called with root vampire", () => {
-      expect(offspring1.isMoreSeniorThan(rootVampire)).to.equal(false);
-      expect(offspring2.isMoreSeniorThan(rootVampire)).to.equal(false);
-      expect(offspring3.isMoreSeniorThan(rootVampire)).to.equal(false);
-      expect(offspring4.isMoreSeniorThan(rootVampire)).to.equal(false);
+      expect(progeny1.isMoreSeniorThan(rootVampire)).to.equal(false);
+      expect(progeny2.isMoreSeniorThan(rootVampire)).to.equal(false);
+      expect(progeny3.isMoreSeniorThan(rootVampire)).to.equal(false);
+      expect(progeny4.isMoreSeniorThan(rootVampire)).to.equal(false);
     });
 
     it("should return true when a vampire is more senior", () => {
-      expect(offspring3.isMoreSeniorThan(offspring4)).to.equal(true);
+      expect(progeny3.isMoreSeniorThan(progeny4)).to.equal(true);
     });
     
     it("should return false when a vampire is not more senior", () => {
-      expect(offspring4.isMoreSeniorThan(offspring3)).to.equal(false);
+      expect(progeny4.isMoreSeniorThan(progeny3)).to.equal(false);
     });
 
   });
